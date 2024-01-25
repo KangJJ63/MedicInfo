@@ -1,0 +1,18 @@
+SELECT NVL(C.VAR_CD, B.VAR_CD) VAR_CD
+	  ,A.DI_SET_VAL
+ FROM TBPINV112 A
+	  JOIN TBPINM102 B ON (A.ASK_ID = B.ASK_ID
+				       AND A.RSHP_ID = B.RSHP_ID
+					   AND A.PRVDR_CD = B.PRVDR_CD
+					   AND A.CAT_CD = B.CAT_CD
+					   AND A.ORG_MRG_TP_CD = B.ORG_MRG_TP_CD
+				       AND A.VAR_DSCR_SEQ = B.VAR_DSCR_SEQ)	
+      LEFT JOIN TBPINM002 C ON (B.VAR_SEQ = C.VAR_SEQ)	 			  
+WHERE A.ASK_ID = '{ask_id}'
+AND A.RSHP_ID = '{rshp_id}'
+AND A.PRVDR_CD = '{prvdr_cd}'
+AND A.CAT_CD = '{cat_cd}'
+AND A.EXEC_SEQ = {exec_seq}
+AND A.DI_SET_VAL IS NOT NULL
+;
+

@@ -1,0 +1,26 @@
+INSERT INTO TBPPKV003_TMP
+(
+ ASK_ID
+,RSHP_ID
+,PRVDR_CD
+,MRG_NM
+,MRG_SSN
+,TTP_ID
+,HASH_DID
+,CRT_PGM_ID
+,CRT_DT
+)
+VALUES
+(
+ ?
+,?
+,?
+,?
+,?
+,?
+,?
+,'HMBPUSER'
+,SYSDATE
+
+)
+;

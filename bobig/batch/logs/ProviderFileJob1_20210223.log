@@ -1,0 +1,71 @@
+INFO : line = 460 , message = ProviderFileJob program start time == 2021-02-23 14:25:30
+INFO : line = 156 , message = SELECT ORIGINOID,
+	   REQUESTID ASK_ID,
+	   HYPOID RSHP_ID
+FROM T_BDREQUESTINFO
+WHERE REQUESTID = '2019-A0031'
+INFO : line = 187 , message = == OID = 1191108175128466014, ASK_ID = 2019-A0031, RSHP_ID = B0001 == 
+INFO : line = 194 , message = SELECT PRVDR_CD,
+	   CAT_CD,
+	   FILE_NM,
+	   PRCS_FAIL_YN
+FROM TBPINB103
+WHERE 1=1
+	  AND ASK_ID = '2019-A0031'
+	  AND RSHP_ID = 'B0001'
+
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN07_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN08_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN09_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN10_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN11_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN12_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN13_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN14_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN15_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN16_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 113 , message = ### File_Naming_Check ###
+file_ask_id = 2019-A0031 , file_rshp_id = B0001,     file_prvdr_num = 504
+INFO : line = 244 , message = IF_DL_504_2019A0031_B0001_HN17_ALL_1_1_20210201.txt 파일이름 확인
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN07_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+ERROR : line = 365 , message = 2019-A0031 정합성 검증 실패
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN08_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN09_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN10_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN11_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN12_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN13_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN14_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN15_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN16_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==
+INFO : line = 350 , message = IF_DL_504_2019A0031_B0001_HN17_ALL_1_1_20210201.txt 파일이름 확인 완료. 정합성검증 시작
+INFO : line = 379 , message = == 2019-A0031 정합성 검증 일치 ==

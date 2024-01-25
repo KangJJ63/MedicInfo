@@ -1,0 +1,23 @@
+INSERT INTO TBPINV114
+(ASK_ID, 
+ RSHP_ID, 
+ PRVDR_CD, 
+ CAT_CD,
+ EXEC_SEQ, 
+ RSLT_SEQ,
+ DI_WK_DIV_CNTS, 
+ WK_EXEC_CNTS,
+ CRT_PGM_ID,
+ CRT_DT)
+VALUES 
+('{ask_id}',
+ '{rshp_id}',
+ '{prvdr_cd}',
+ '{cat_cd}',
+ {exec_seq}, 
+ TBPINV114_RSLT_SEQ.NEXTVAL, 
+ '{di_wk_div_cnts}', 
+ '{wk_exec_cnts}',
+ '{crt_pgm_id}', 
+ SYSDATE)
+;

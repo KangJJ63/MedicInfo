@@ -1,0 +1,94 @@
+SELECT
+	 A.ASK_ID
+	,A.RSHP_ID
+	,A.PRVDR_CD
+	,A.CAT_CD
+	,LISTAGG(B.DATATP, ',' ) WITHIN GROUP (ORDER BY A.VAR_SEQ) AS DATATP
+	,LISTAGG(B.VAR_CD, ',' ) WITHIN GROUP (ORDER BY B.VAR_DSCR_SEQ) AS VAR_DSCR_SEQ_A
+	,LISTAGG(B.VAR_DSCR_SEQ, ',' ) WITHIN GROUP (ORDER BY A.VAR_SEQ) AS VAR_DSCR_SEQ_B
+	,B.CNT
+FROM 
+	(
+		SELECT 
+			A.ASK_ID
+			,A.RSHP_ID
+			,A.PRVDR_CD
+			,A.CAT_CD
+			,A.VAR_SEQ
+			,A.VAR_DSCR_SEQ
+			,'V' || B.VAR_DSCR_SEQ 
+			,B.DI_SET_VAL
+		FROM TBPINM102 A
+		 	 JOIN TBPINV112 B ON ( A.ASK_ID = B.ASK_ID
+				 			 AND A.RSHP_ID = B.RSHP_ID
+							 AND A.PRVDR_CD = B.PRVDR_CD
+							 AND A.CAT_CD = B.CAT_CD
+							 AND A.VAR_DSCR_SEQ = B.VAR_DSCR_SEQ )
+		WHERE 1=1
+		AND A.ASK_ID = '{ask_id}'
+		AND A.RSHP_ID = '{rshp_id}'
+		AND A.PRVDR_CD = '{prvdr_cd}'
+		AND A.CAT_CD = '{cat_cd}'	
+		AND A.ORG_MRG_TP_CD = '1' 
+		AND B.EXEC_SEQ = {exec_seq}
+	) A ,
+	(
+	SELECT 
+		 A.ASK_ID
+		,A.RSHP_ID
+		,A.PRVDR_CD
+		,A.CAT_CD
+		,A.VAR_SEQ
+		,A.VAR_DSCR_NM
+		,A.VAR_DSCR_SEQ
+		,A.VAR_CD
+		,A.DATATP
+		,max_cnt.CNT
+	FROM (
+				SELECT 
+				A.ASK_ID
+				,A.RSHP_ID
+				,A.PRVDR_CD
+				,A.CAT_CD
+				,A.VAR_SEQ
+				,A.VAR_DSCR_NM
+				,A.VAR_DSCR_SEQ
+				,B.VAR_CD
+				,B.DATATP
+			FROM TBPINM102 A
+			     LEFT JOIN TBPINM002 B ON (A.VAR_SEQ = B.VAR_SEQ)
+			WHERE 1= 1
+			AND A.ASK_ID = '{ask_id}'
+			AND A.RSHP_ID = '{rshp_id}'
+			AND A.PRVDR_CD = '{prvdr_cd}'
+			AND A.CAT_CD = '{cat_cd}'	
+			AND A.ORG_MRG_TP_CD = '2'
+		) A ,
+		(
+		SELECT  MAX(A.VAR_DSCR_SEQ) AS CNT
+			FROM TBPINM102 A
+			     LEFT JOIN TBPINM002 B ON (A.VAR_SEQ = B.VAR_SEQ)
+			WHERE 1= 1
+			AND A.ASK_ID = '{ask_id}'
+			AND A.RSHP_ID = '{rshp_id}'
+			AND A.PRVDR_CD = '{prvdr_cd}'
+			AND A.CAT_CD = '{cat_cd}'	
+			AND A.ORG_MRG_TP_CD = '2' 
+		)  max_cnt
+	) B
+WHERE A.VAR_SEQ = B.VAR_SEQ
+AND A.ASK_ID = B.ASK_ID
+AND A.RSHP_ID = B.RSHP_ID
+AND A.PRVDR_CD = B.PRVDR_CD
+AND A.CAT_CD = B.CAT_CD
+AND A.ASK_ID = '{ask_id}'
+AND A.RSHP_ID = '{rshp_id}'
+AND A.PRVDR_CD = '{prvdr_cd}'
+AND A.CAT_CD = '{cat_cd}'	
+GROUP BY 
+	A.ASK_ID
+	,A.RSHP_ID
+	,A.PRVDR_CD
+	,A.CAT_CD
+	,B.CNT
+;

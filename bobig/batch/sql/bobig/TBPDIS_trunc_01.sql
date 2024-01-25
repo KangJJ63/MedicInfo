@@ -1,0 +1,1 @@
+ALTER TABLE TBPDIS{years} TRUNCATE PARTITION TBPDIS{years}_{exec_seq};

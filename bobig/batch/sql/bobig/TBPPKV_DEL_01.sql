@@ -1,0 +1,1 @@
+ALTER TABLE TBPPKV{year} TRUNCATE PARTITION  TBPPKV2019_{ask_id_num}_{rshp_id}_{prvdr_cd} ;

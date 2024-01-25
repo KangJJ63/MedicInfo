@@ -1,0 +1,10 @@
+SELECT 
+ ASK_ID 
+,RSHP_ID
+,PRVDR_CD
+,HASH_DID
+FROM TBPPKV003
+WHERE 1=1
+AND ASK_ID = '{ask_id}'
+AND RSHP_ID = '{rshp_id}'
+AND PRVDR_CD = '{prvdr_cd}'

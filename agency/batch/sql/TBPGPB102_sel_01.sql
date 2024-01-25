@@ -1,0 +1,7 @@
+SELECT PRVDR_CD,
+	   FILE_NM,
+	   DI_PRCS_YN,
+	   FILE_DIV_CD
+FROM TBPGPB102
+WHERE ASK_ID = '{ask_id}' AND
+	  RSHP_ID = '{rshp_id}'

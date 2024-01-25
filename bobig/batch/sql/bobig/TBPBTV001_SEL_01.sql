@@ -1,0 +1,16 @@
+SELECT 
+       C.ASK_ID
+       , C.RSHP_ID
+       , C.EXEC_SEQ
+	   , A.CNORGCODE
+	   , A.RULESETSEQ2
+	   , C.SRC_PTH_NM
+	   , C.RSLT_PTH_NM
+  FROM T_BDREQUESTINFO A
+       JOIN TBPBTV001 C ON (A.REQUESTID = C.ASK_ID AND A.HYPOID = C.RSHP_ID)
+       LEFT JOIN TBPBTV002 D ON (C.BT_SEQ = D.BT_SEQ AND D.CRT_PGM_ID = '{crt_pgm_id}')
+WHERE 1=1 
+AND C.WK_DTL_TP_CD = '{wk_dtl_tp_cd}'
+AND NVL(D.WK_STS_CD,'902') NOT IN ('002') 
+AND C.BT_SEQ = {bt_seq}
+

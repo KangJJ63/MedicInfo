@@ -1,0 +1,5 @@
+SELECT OID,
+	   ASK_ID,
+	   RSHP_ID 
+FROM TBPGPM101 
+WHERE PRCSTS = {prcsts}
